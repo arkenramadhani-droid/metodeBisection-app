@@ -1,7 +1,6 @@
 import streamlit as st
 
 st.title("SPNL with meotde Bisection")
-st.markdown("TUGAS UAS ARYA KENDRIAN")
 st.markdown(
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
     unsafe_allow_html=True
