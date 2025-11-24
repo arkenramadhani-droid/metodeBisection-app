@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🎈 My new app")
+st.title("SPNL with meotde Bisection")
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "by Arya Kendrian, follow my Instagram [https://www.instagram.com/aryakndrn/](https://www.instagram.com/aryakndrn/)."
 )
