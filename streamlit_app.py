@@ -94,18 +94,30 @@ with col5:
 
 if st.button("🚀 Hitung Akar", type="primary"):
     akar, tabel, status = bisection_method(func_str, a, b, tol, max_iter)
+
     st.subheader("📝 Hasil Perhitungan")
     st.info(status)
 
     if akar is not None:
+        try:
+            f = lambda x: eval(func_str)
+            f_akar = f(akar)
+        except Exception:
+            # Handle jika fungsi gagal dievaluasi di sini (meskipun seharusnya sudah terdeteksi di fungsi bisection)
+            f_akar = float('nan') 
+
         st.metric(
             label="Nilai Akar ($c$)", 
             value=f"{akar:.6f}",
-            delta=f"f(c) = {bisection_method(func_str, akar, akar, 0, 1)[0]:.6e}"
+            # 2. Ganti delta untuk menampilkan f(c) yang dihitung langsung
+            delta=f"f(c) = {f_akar:.6e}" 
         )
-        
+
         st.subheader("📚 Detail Iterasi")
         st.dataframe(tabel, use_container_width=True)
+
+    st.markdown("---")
+    st.caption("Catatan: Fungsi matematika seperti cos, sin, exp, log harus diawali dengan 'np.' karena menggunakan library NumPy.")
 
 st.markdown(
     '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
