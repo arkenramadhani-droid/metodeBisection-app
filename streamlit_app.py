@@ -53,9 +53,9 @@ def bisection_method(func_str, a, b, tol, max_iter):
 
     # Tentukan status akhir
     if abs(b - a) < tol:
-        status = f"✅ Akar berhasil ditemukan pada iterasi ke-{iter_count} dengan error kurang dari {tol}."
+        status = f"Akar berhasil ditemukan pada iterasi ke-{iter_count} dengan error kurang dari {tol}."
     else:
-        status = f"⚠️ Perhitungan berhenti setelah {max_iter} iterasi, toleransi belum tercapai."
+        status = f"Perhitungan berhenti setelah {max_iter} iterasi, toleransi belum tercapai."
 
     return c, table_data, status
 
@@ -92,10 +92,10 @@ with col4:
 with col5:
     max_iter = st.number_input("Maksimum Iterasi:", value=100, step=1)
 
-if st.button("🚀 Hitung Akar", type="primary"):
+if st.button("Hitung Akar", type="primary"):
     akar, tabel, status = bisection_method(func_str, a, b, tol, max_iter)
 
-    st.subheader("📝 Hasil Perhitungan")
+    st.subheader("Hasil Perhitungan")
     st.info(status)
 
     if akar is not None:
@@ -113,7 +113,7 @@ if st.button("🚀 Hitung Akar", type="primary"):
             delta=f"f(c) = {f_akar:.6e}" 
         )
 
-        st.subheader("📚 Detail Iterasi")
+        st.subheader("Detail Iterasi")
         st.dataframe(tabel, use_container_width=True)
 
     st.markdown("---")
