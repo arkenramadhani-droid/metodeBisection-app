@@ -1,32 +1,6 @@
 import streamlit as st
 import numpy as np
 
-st.title("SPNL with meotde Bisection")
-st.markdown(
-    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
-    unsafe_allow_html=True
-)
-ig_color = "linear-gradient(45deg, #f09433 0%,#e6684e 25%,#c63683 50%,#8b33a5 75%,#515bd4 100%)"
-st.markdown(
-    f"""
-    <a href="https://www.instagram.com/aryakndrn/" target="_blank" style="text-decoration: none;">
-        <div style="
-            background: {ig_color};
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-align: center;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
-            <i class="fab fa-instagram"></i> Ikuti Arya Kendrian
-        </div>
-    </a>
-    """,
-    unsafe_allow_html=True
-)
-
 def bisection_method(func_str, a, b, tol, max_iter):
     """
     Menghitung akar fungsi non-linier menggunakan Metode Biseksi.
@@ -91,7 +65,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.title("🔢 Solusi SPNL dengan Metode Biseksi")
+st.title("Solusi SPNL dengan Metode Biseksi")
 st.markdown("Aplikasi web sederhana untuk mencari akar fungsi non-linier $f(x)$ menggunakan Metode Biseksi.")
 
 col1, col2, col3 = st.columns(3)
@@ -99,7 +73,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     # Menggunakan 'st.text_input' untuk fungsi (string)
     func_str = st.text_input(
-        "Fungsi $f(x)$: (Gunakan 'np.' untuk fungsi matematika, misal: np.cos(x))",
+        "Fungsi $f(x)$:",
         value="x**3 - 7*x**2 + 14*x - 6",
         help="Contoh: x**2 - 4 atau np.exp(-x) - x"
     )
@@ -133,5 +107,27 @@ if st.button("🚀 Hitung Akar", type="primary"):
         st.subheader("📚 Detail Iterasi")
         st.dataframe(tabel, use_container_width=True)
 
-    st.markdown("---")
-    st.caption("Catatan: Fungsi matematika seperti cos, sin, exp, log harus diawali dengan 'np.' karena menggunakan library NumPy.")
+st.markdown(
+    '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">',
+    unsafe_allow_html=True
+)
+ig_color = "linear-gradient(45deg, #f09433 0%,#e6684e 25%,#c63683 50%,#8b33a5 75%,#515bd4 100%)"
+st.markdown(
+    f"""
+    <a href="https://www.instagram.com/aryakndrn/" target="_blank" style="text-decoration: none;">
+        <div style="
+            background: {ig_color};
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+            <i class="fab fa-instagram"></i> Ikuti Arya Kendrian
+        </div>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
